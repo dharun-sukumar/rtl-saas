@@ -14,7 +14,6 @@
     <div class="auth-container">
         <div class="auth-sidebar">
             <div class="auth-brand">
-                <img src="/placeholder.svg?height=50&width=50" alt="CloudFlow Logo" class="logo">
                 <span class="brand-name">CloudFlow</span>
             </div>
             <div class="auth-content">
@@ -35,9 +34,11 @@
                     </div>
                 </div>
             </div>
-            <button class="rtl-toggle auth-rtl-toggle" onclick="toggleRTL()">
-                <i class="fas fa-language"></i>
-            </button>
+<!-- either change onclick -->
+<button class="rtl-toggle auth-rtl-toggle" onclick="toggleRTLDirect()">
+    <i class="fas fa-language"></i>
+</button>
+
         </div>
 
         <div class="auth-form-container">
@@ -142,8 +143,6 @@
                 }
             }
         });
-    </script>
-    <script>
     // Apply saved RTL setting before page renders
     (function() {
         const savedDir = localStorage.getItem('siteDirection') || 'ltr';
