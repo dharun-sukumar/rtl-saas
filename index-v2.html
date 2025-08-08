@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudFlow - Alternative Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="brand-name">CloudFlow</span>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">
+                        Home <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home v1</a>
+                        <a href="index-v2.html" class="dropdown-item">Home v2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Dashboard <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                        <a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
+                    </div>
+                </div>
+                <a href="login.html" class="nav-link login-btn">Login</a>
+                <button class="rtl-toggle" onclick="toggleRTLDirect()">
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section V2 -->
+    <section class="hero hero-v2">
+        <div class="hero-background">
+            <div class="container">
+                <div class="hero-content-center">
+                    <h1 class="hero-title">Grow Your Business with Our SAAS</h1>
+                    <p class="hero-subtitle">The all-in-one platform that helps you manage, automate, and scale your business operations with ease.</p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary btn-large">Start Free Trial</button>
+                        <button class="btn btn-outline">Watch Demo</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>10K+</h3>
+                            <p>Active Users</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>99.9%</h3>
+                            <p>Uptime</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24/7</h3>
+                            <p>Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid V2 -->
+    <section class="features-v2">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose CloudFlow?</h2>
+                <p>Discover the features that make us different</p>
+            </div>
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Lightning Fast Performance</h3>
+                            <p>Experience blazing fast load times and seamless performance across all devices and platforms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Easy Integration</h3>
+                            <p>Connect with your favorite tools and services in just a few clicks with our extensive API library.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>24/7 Expert Support</h3>
+                            <p>Get help whenever you need it with our dedicated support team available around the clock.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Preview -->
+    <section class="pricing-preview" style="padding: 60px 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Simple, Transparent Pricing</h2>
+                <p style="color: #666; font-size: 1.1rem;">Choose the plan that fits your needs</p>
+            </div>
+            <div class="pricing-cards" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; align-items: stretch; direction: inherit;">
+                <div class="pricing-card" style="border-radius: 18px; box-shadow: 0 4px 24px rgba(79,140,255,0.08); flex: 1 1 280px; max-width: 340px; min-width: 260px; margin: 0 8px; display: flex; flex-direction: column; align-items: center; padding: 36px 28px; text-align: center; transition: box-shadow 0.2s;">
+                    <h3 style="font-size: 1.4rem; margin-bottom: 12px; color: #2563eb;">Starter</h3>
+                    <div class="price" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 18px; color: #2563eb;">
+                        <span class="currency" style="font-size: 1.1rem; vertical-align: super;">$</span>
+                        <span class="amount">9</span>
+                        <span class="period" style="font-size: 1rem; color: #888;">/month</span>
+                    </div>
+                    <ul class="features-list" style="list-style: none; padding: 0; margin: 0 0 24px 0; text-align: start; direction: inherit;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #2563eb; margin-inline-end: 8px;"></i> Up to 5 users</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #2563eb; margin-inline-end: 8px;"></i> 10GB storage</li>
+                        <li><i class="fas fa-check" style="color: #2563eb; margin-inline-end: 8px;"></i> Basic support</li>
+                    </ul>
+                    <button class="btn btn-outline" style="margin-top: auto; width: 100%; border-color: #2563eb; color: #2563eb;">Get Started</button>
+                </div>
+                <div class="pricing-card featured" style="background: #2563eb; color: #fff; border-radius: 18px; box-shadow: 0 6px 32px rgba(79,140,255,0.12); flex: 1 1 280px; max-width: 340px; min-width: 260px; margin: 0 8px; display: flex; flex-direction: column; align-items: center; padding: 44px 28px; text-align: center; position: relative; z-index: 1;">
+                    <div class="badge" style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #fff; color: #2563eb; font-weight: 600; font-size: 0.95rem; padding: 4px 16px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);">Most Popular</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Professional</h3>
+                    <div class="price" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 18px;">
+                        <span class="currency" style="font-size: 1.1rem; vertical-align: super;">$</span>
+                        <span class="amount">29</span>
+                        <span class="period" style="font-size: 1rem; color: #e0e0e0;">/month</span>
+                    </div>
+                    <ul class="features-list" style="list-style: none; padding: 0; margin: 0 0 24px 0; text-align: start; direction: inherit;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #fff; margin-inline-end: 8px;"></i> Up to 25 users</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #fff; margin-inline-end: 8px;"></i> 100GB storage</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #fff; margin-inline-end: 8px;"></i> Priority support</li>
+                        <li><i class="fas fa-check" style="color: #fff; margin-inline-end: 8px;"></i> Advanced analytics</li>
+                    </ul>
+                    <button class="btn btn-primary" style="margin-top: auto; width: 100%; background: #fff; color: #2563eb; border: none;">Get Started</button>
+                </div>
+                <div class="pricing-card" style="border-radius: 18px; box-shadow: 0 4px 24px rgba(79,140,255,0.08); flex: 1 1 280px; max-width: 340px; min-width: 260px; margin: 0 8px; display: flex; flex-direction: column; align-items: center; padding: 36px 28px; text-align: center; transition: box-shadow 0.2s;">
+                    <h3 style="font-size: 1.4rem; margin-bottom: 12px; color: #2563eb;">Enterprise</h3>
+                    <div class="price" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 18px; color: #2563eb;">
+                        <span class="currency" style="font-size: 1.1rem; vertical-align: super;">$</span>
+                        <span class="amount">99</span>
+                        <span class="period" style="font-size: 1rem; color: #888;">/month</span>
+                    </div>
+                    <ul class="features-list" style="list-style: none; padding: 0; margin: 0 0 24px 0; text-align: start; direction: inherit;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #2563eb; margin-inline-end: 8px;"></i> Unlimited users</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #2563eb; margin-inline-end: 8px;"></i> Unlimited storage</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: #2563eb; margin-inline-end: 8px;"></i> 24/7 phone support</li>
+                        <li><i class="fas fa-check" style="color: #2563eb; margin-inline-end: 8px;"></i> Custom integrations</li>
+                    </ul>
+                    <button class="btn btn-outline" style="margin-top: auto; width: 100%; border-color: #2563eb; color: #2563eb;">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" style="background: #2563eb; padding: 56px 0;">
+        <div class="container" style="max-width: 900px; margin: 0 auto;">
+            <div class="cta-content" style="text-align: center; color: #fff;">
+                <h2 style="font-size: 2.2rem; margin-bottom: 12px;">Ready to Get Started?</h2>
+                <p style="font-size: 1.15rem; margin-bottom: 28px;">Join thousands of satisfied customers today</p>
+                <button class="btn btn-primary btn-large" style="font-size: 1.15rem; padding: 16px 44px; border-radius: 32px; background: #fff; color: #2563eb; border: none; font-weight: 600;">Start Your Free Trial</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="/placeholder.svg?height=40&width=40" alt="CloudFlow Logo" class="logo">
+                        <span class="brand-name">CloudFlow</span>
+                    </div>
+                    <p>Empowering businesses worldwide with innovative SAAS solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CloudFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/rtl-toggle.js"></script>
+    <script>
+        // Simple direct RTL toggle function
+        function toggleRTLDirect() {
+            console.log('toggleRTLDirect called');
+            const html = document.documentElement;
+            const currentDir = html.getAttribute('dir') || 'ltr';
+            const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+            
+            html.setAttribute('dir', newDir);
+            console.log('Direction changed from', currentDir, 'to', newDir);
+            
+            // Update icon
+            const icon = document.querySelector('.rtl-toggle i');
+            if (icon) {
+                if (newDir === 'rtl') {
+                    icon.className = 'fas fa-globe-americas';
+                } else {
+                    icon.className = 'fas fa-globe';
+                }
+            }
+            
+            // Visual feedback
+        }
+        
+        // Test if RTL toggle is working
+        console.log('RTL toggle function available:', typeof toggleRTL);
+        console.log('HTML dir attribute:', document.documentElement.getAttribute('dir'));
+        
+        // Add click event listener as backup
+        document.addEventListener('DOMContentLoaded', function() {
+            const rtlButton = document.querySelector('.rtl-toggle');
+            if (rtlButton) {
+                console.log('RTL button found');
+                rtlButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('RTL button clicked');
+                    if (typeof toggleRTL === 'function') {
+                        toggleRTL();
+                    } else {
+                        // Fallback RTL toggle
+                        const html = document.documentElement;
+                        const currentDir = html.getAttribute('dir') || 'ltr';
+                        const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+                        html.setAttribute('dir', newDir);
+                        console.log('Fallback RTL toggle executed. New direction:', newDir);
+                    }
+                });
+            } else {
+                console.log('RTL button not found');
+            }
+        });
+    </script>
+</body>
+</html>

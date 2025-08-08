@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <main class="dashboard-main" style="margin-inline-start: 280px; min-height: 100vh; background: #0f172a; direction: inherit;">
+    <title>Admin Dashboard - CloudFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" style="width: 280px; min-height: 100vh; background: linear-gradient(180deg, #2563eb 0%, #1e40af 100%); color: #fff; position: fixed; top: 0; left: 0; z-index: 1000; box-shadow: 4px 0 12px rgba(0,0,0,0.1); transition: all 0.3s ease; direction: inherit;">
+        <div class="sidebar-header" style="padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <div class="sidebar-brand" style="display: flex; align-items: center; gap: 12px; direction: inherit;">
+                <span class="brand-name" style="font-size: 1.4rem; font-weight: 700; color: #fff;">CloudFlow</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav" style="padding: 20px 0;">
+            <ul style="list-style: none; margin: 0; padding: 0;">
+                <li class="nav-item dropdown" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link dropdown-toggle" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; border-radius: 0; background: rgba(255,255,255,0.1); margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-tachometer-alt" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Dashboard</span>
+                        <i class="fas fa-chevron-down dropdown-arrow" style="margin-inline-start: auto; transition: transform 0.3s ease;"></i>
+                    </a>
+                    <ul class="dropdown-submenu" style="list-style: none; margin: 8px 0 0 0; padding: 0; background: rgba(0,0,0,0.1); margin: 8px 12px 0 12px; border-radius: 8px; overflow: hidden;">
+                        <li><a href="user-dashboard.html" style="display: block; padding: 10px 20px; color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; padding-inline-start: 52px;">User Dashboard</a></li>
+                        <li><a href="admin-dashboard.html" class="active" style="display: block; padding: 10px 20px; color: #fff; text-decoration: none; transition: all 0.3s ease; background: rgba(255,255,255,0.1); padding-inline-start: 52px;">Admin Dashboard</a></li>
+                    </ul>
+                </li>
+                <li class="nav-divider" style="height: 1px; background: rgba(255,255,255,0.1); margin: 16px 20px;"></li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-users" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Users</span>
+                        <span class="badge" style="background: #ef4444; color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; font-weight: 600;">24</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-credit-card" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Subscriptions</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-chart-bar" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Analytics</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-envelope" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Messages</span>
+                        <span class="badge" style="background: #ef4444; color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; font-weight: 600;">5</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-cog" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Settings</span>
+                    </a>
+                </li>
+                <li class="nav-divider" style="height: 1px; background: rgba(255,255,255,0.1); margin: 16px 20px;"></li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-life-ring" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Support</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="index.html" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-home" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Back to Site</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="index.html" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-sign-out-alt" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main" style="min-height: 100vh; direction: inherit;">
+        <!-- Header -->
+        <header class="dashboard-header" style="border-bottom: 1px solid #e2e8f0; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; direction: inherit; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <div class="header-left" style="display: flex; align-items: center; gap: 16px;">
+                <button class="sidebar-toggle" style="background: none; border: none; font-size: 1.2rem; color: #64748b; cursor: pointer; padding: 8px; border-radius: 6px; transition: all 0.2s;">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 style="font-size: 1.8rem; font-weight: 700; color: #ffffff; margin: 0;">Admin Dashboard</h1>
+            </div>
+            <div class="header-right" style="display: flex; align-items: center; gap: 16px; direction: inherit;">
+                <button class="rtl-toggle" onclick="toggleRTLDirect()" style="background: none; border: 1px solid #e2e8f0; color: #64748b; cursor: pointer; padding: 8px 12px; border-radius: 8px; transition: all 0.2s;">
+                    <i class="fas fa-globe"></i>
+                </button>
+                <div class="notifications" style="position: relative;">
+                    <button class="notification-btn" style="background: none; border: none; color: #64748b; cursor: pointer; padding: 8px; border-radius: 6px; position: relative; transition: all 0.2s;">
+                        <i class="fas fa-bell" style="font-size: 1.1rem;"></i>
+                        <span class="notification-badge" style="position: absolute; top: 4px; right: 4px; background: #ef4444; color: #fff; font-size: 0.75rem; padding: 2px 6px; border-radius: 10px; font-weight: 600;">3</span>
+                    </button>
+                </div>
+                <div class="user-menu" style="display: flex; align-items: center; gap: 12px; padding: 8px 16px; border-radius: 12px; background: #334155; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.2s;">
+                    <div class="user-avatar" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden;">
+                        <img src="/placeholder.svg?height=40&width=40" alt="Admin" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="user-info" style="text-align: start; direction: inherit;">
+                        <span class="user-name" style="display: block; font-weight: 600; color: #ffffff; font-size: 0.9rem;">Admin User</span>
+                        <span class="user-role" style="display: block; color: #64748b; font-size: 0.8rem;">Administrator</span>
+                    </div>
+                    <i class="fas fa-chevron-down" style="color: #64748b; font-size: 0.8rem; margin-inline-start: 8px;"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content" style="padding: 32px; direction: inherit;">
+            <!-- Stats Cards -->
+            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 32px;">
+                <div class="stat-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155; transition: all 0.2s;">
+                    <div class="stat-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div class="stat-icon users" style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #fff;">
+                            <i class="fas fa-users" style="font-size: 1.2rem;"></i>
+                        </div>
+                        <div class="stat-trend up" style="display: flex; align-items: center; gap: 4px; background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">
+                            <i class="fas fa-arrow-up" style="font-size: 0.7rem;"></i>
+                            12%
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 style="color: #94a3b8; font-size: 0.9rem; font-weight: 500; margin-bottom: 8px;">Total Users</h3>
+                        <div class="stat-number" style="font-size: 2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 4px;">12,543</div>
+                        <p class="stat-description" style="color: #64748b; font-size: 0.8rem; margin: 0;">+156 this month</p>
+                    </div>
+                </div>
+
+                <div class="stat-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155; transition: all 0.2s;">
+                    <div class="stat-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div class="stat-icon subscriptions" style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #10b981 0%, #047857 100%); display: flex; align-items: center; justify-content: center; color: #fff;">
+                            <i class="fas fa-credit-card" style="font-size: 1.2rem;"></i>
+                        </div>
+                        <div class="stat-trend up" style="display: flex; align-items: center; gap: 4px; background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">
+                            <i class="fas fa-arrow-up" style="font-size: 0.7rem;"></i>
+                            8%
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 style="color: #94a3b8; font-size: 0.9rem; font-weight: 500; margin-bottom: 8px;">Active Subscriptions</h3>
+                        <div class="stat-number" style="font-size: 2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 4px;">8,429</div>
+                        <p class="stat-description" style="color: #64748b; font-size: 0.8rem; margin: 0;">+67 this month</p>
+                    </div>
+                </div>
+
+                <div class="stat-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155; transition: all 0.2s;">
+                    <div class="stat-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div class="stat-icon revenue" style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); display: flex; align-items: center; justify-content: center; color: #fff;">
+                            <i class="fas fa-dollar-sign" style="font-size: 1.2rem;"></i>
+                        </div>
+                        <div class="stat-trend up" style="display: flex; align-items: center; gap: 4px; background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">
+                            <i class="fas fa-arrow-up" style="font-size: 0.7rem;"></i>
+                            15%
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 style="color: #94a3b8; font-size: 0.9rem; font-weight: 500; margin-bottom: 8px;">Monthly Revenue</h3>
+                        <div class="stat-number" style="font-size: 2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 4px;">$247,890</div>
+                        <p class="stat-description" style="color: #64748b; font-size: 0.8rem; margin: 0;">+$32,450 this month</p>
+                    </div>
+                </div>
+
+                <div class="stat-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155; transition: all 0.2s;">
+                    <div class="stat-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div class="stat-icon support" style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); display: flex; align-items: center; justify-content: center; color: #fff;">
+                            <i class="fas fa-headset" style="font-size: 1.2rem;"></i>
+                        </div>
+                        <div class="stat-trend down" style="display: flex; align-items: center; gap: 4px; background: #fee2e2; color: #dc2626; padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">
+                            <i class="fas fa-arrow-down" style="font-size: 0.7rem;"></i>
+                            5%
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 style="color: #94a3b8; font-size: 0.9rem; font-weight: 500; margin-bottom: 8px;">Support Tickets</h3>
+                        <div class="stat-number" style="font-size: 2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 4px;">89</div>
+                        <p class="stat-description" style="color: #64748b; font-size: 0.8rem; margin: 0;">-12 from last month</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts and Recent Activity -->
+            <div class="dashboard-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 32px;">
+                <!-- Revenue Chart -->
+                <div class="dashboard-card chart-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155;">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #334155;">
+                        <h3 style="font-size: 1.2rem; font-weight: 600; color: #f1f5f9; margin: 0;">Revenue Analytics</h3>
+                        <select class="chart-period" style="padding: 8px 12px; border: 1px solid #475569; border-radius: 8px; background: #334155; color: #cbd5e1; font-size: 0.9rem;">
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 3 months</option>
+                            <option>Last year</option>
+                        </select>
+                    </div>
+                    <div class="chart-container" style="height: 300px; display: flex; align-items: center; justify-content: center;">
+                        <div class="chart-placeholder" style="text-align: center; color: #64748b;">
+                            <i class="fas fa-chart-line" style="font-size: 3rem; color: #475569; margin-bottom: 16px;"></i>
+                            <p style="font-size: 1.1rem; font-weight: 500; margin-bottom: 8px; color: #94a3b8;">Revenue Chart</p>
+                            <span style="font-size: 0.9rem;">Interactive analytics dashboard</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Users -->
+                <div class="dashboard-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155;">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #334155;">
+                        <h3 style="font-size: 1.2rem; font-weight: 600; color: #f1f5f9; margin: 0;">Recent Users</h3>
+                        <a href="#" class="view-all" style="color: #2563eb; text-decoration: none; font-size: 0.9rem; font-weight: 500;">View All</a>
+                    </div>
+                    <div class="user-list">
+                        <div class="user-item" style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #334155;">
+                            <img src="/placeholder.svg?height=40&width=40" alt="User" class="user-avatar-small" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #475569;">
+                            <div class="user-details" style="flex: 1;">
+                                <div class="user-name" style="font-weight: 500; color: #f1f5f9; font-size: 0.9rem; margin-bottom: 2px;">John Smith</div>
+                                <div class="user-email" style="color: #94a3b8; font-size: 0.8rem;">john@company.com</div>
+                            </div>
+                            <div class="user-status">
+                                <span class="status-badge active" style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 500;">Active</span>
+                            </div>
+                        </div>
+                        <div class="user-item" style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #334155;">
+                            <img src="/placeholder.svg?height=40&width=40" alt="User" class="user-avatar-small" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #475569;">
+                            <div class="user-details" style="flex: 1;">
+                                <div class="user-name" style="font-weight: 500; color: #f1f5f9; font-size: 0.9rem; margin-bottom: 2px;">Sarah Johnson</div>
+                                <div class="user-email" style="color: #94a3b8; font-size: 0.8rem;">sarah@startup.io</div>
+                            </div>
+                            <div class="user-status">
+                                <span class="status-badge pending" style="background: #fef3c7; color: #d97706; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 500;">Pending</span>
+                            </div>
+                        </div>
+                        <div class="user-item" style="display: flex; align-items: center; gap: 12px; padding: 12px 0;">
+                            <img src="/placeholder.svg?height=40&width=40" alt="User" class="user-avatar-small" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #475569;">
+                            <div class="user-details" style="flex: 1;">
+                                <div class="user-name" style="font-weight: 500; color: #f1f5f9; font-size: 0.9rem; margin-bottom: 2px;">Michael Brown</div>
+                                <div class="user-email" style="color: #94a3b8; font-size: 0.8rem;">michael@corp.com</div>
+                            </div>
+                            <div class="user-status">
+                                <span class="status-badge active" style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 500;">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity and System Status -->
+            <div class="dashboard-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;">
+                <!-- Recent Activity -->
+                <div class="dashboard-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155;">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #334155;">
+                        <h3 style="font-size: 1.2rem; font-weight: 600; color: #f1f5f9; margin: 0;">Recent Activity</h3>
+                        <button class="refresh-btn" style="background: transparent; border: none; color: #2563eb; cursor: pointer; padding: 8px;">
+                            <i class="fas fa-sync-alt" style="font-size: 1rem;"></i>
+                        </button>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 16px 0; border-bottom: 1px solid #334155;">
+                            <div class="activity-icon" style="width: 40px; height: 40px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-user-plus" style="color: #15803d; font-size: 1rem;"></i>
+                            </div>
+                            <div class="activity-content" style="flex: 1;">
+                                <p style="margin: 0 0 4px; color: #f1f5f9; font-weight: 500;">New user registered</p>
+                                <span class="activity-time" style="color: #94a3b8; font-size: 0.8rem;">2 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 16px 0; border-bottom: 1px solid #334155;">
+                            <div class="activity-icon" style="width: 40px; height: 40px; background: #dbeafe; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-credit-card" style="color: #2563eb; font-size: 1rem;"></i>
+                            </div>
+                            <div class="activity-content" style="flex: 1;">
+                                <p style="margin: 0 0 4px; color: #f1f5f9; font-weight: 500;">Subscription upgraded</p>
+                                <span class="activity-time" style="color: #94a3b8; font-size: 0.8rem;">5 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 16px 0; border-bottom: 1px solid #334155;">
+                            <div class="activity-icon" style="width: 40px; height: 40px; background: #fef3c7; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-bug" style="color: #d97706; font-size: 1rem;"></i>
+                            </div>
+                            <div class="activity-content" style="flex: 1;">
+                                <p style="margin: 0 0 4px; color: #f1f5f9; font-weight: 500;">Bug report submitted</p>
+                                <span class="activity-time" style="color: #94a3b8; font-size: 0.8rem;">15 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item" style="display: flex; align-items: flex-start; gap: 12px; padding: 16px 0;">
+                            <div class="activity-icon" style="width: 40px; height: 40px; background: #e0f2fe; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-server" style="color: #0369a1; font-size: 1rem;"></i>
+                            </div>
+                            <div class="activity-content" style="flex: 1;">
+                                <p style="margin: 0 0 4px; color: #f1f5f9; font-weight: 500;">Server maintenance completed</p>
+                                <span class="activity-time" style="color: #94a3b8; font-size: 0.8rem;">1 hour ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Status -->
+                <div class="dashboard-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155;">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #334155;">
+                        <h3 style="font-size: 1.2rem; font-weight: 600; color: #f1f5f9; margin: 0;">System Status</h3>
+                        <div class="status-indicator online" style="display: flex; align-items: center; gap: 8px; color: #10b981; font-size: 0.9rem; font-weight: 500;">
+                            <span class="status-dot" style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block; animation: pulse 2s infinite;"></span>
+                            All systems operational
+                        </div>
+                    </div>
+                    <div class="system-metrics">
+                        <div class="metric-item" style="margin-bottom: 20px;">
+                            <div class="metric-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <div class="metric-label" style="color: #94a3b8; font-size: 0.9rem;">Server Uptime</div>
+                                <div class="metric-value" style="color: #f1f5f9; font-weight: 600; font-size: 1rem;">99.99%</div>
+                            </div>
+                            <div class="metric-bar" style="width: 100%; height: 6px; background: #374151; border-radius: 3px; overflow: hidden;">
+                                <div class="metric-progress" style="width: 99.99%; height: 100%; background: linear-gradient(90deg, #10b981 0%, #059669 100%); transition: width 0.3s ease;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item" style="margin-bottom: 20px;">
+                            <div class="metric-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <div class="metric-label" style="color: #94a3b8; font-size: 0.9rem;">Response Time</div>
+                                <div class="metric-value" style="color: #f1f5f9; font-weight: 600; font-size: 1rem;">142ms</div>
+                            </div>
+                            <div class="metric-bar" style="width: 100%; height: 6px; background: #374151; border-radius: 3px; overflow: hidden;">
+                                <div class="metric-progress good" style="width: 85%; height: 100%; background: linear-gradient(90deg, #10b981 0%, #059669 100%); transition: width 0.3s ease;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item" style="margin-bottom: 20px;">
+                            <div class="metric-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <div class="metric-label" style="color: #94a3b8; font-size: 0.9rem;">Database Load</div>
+                                <div class="metric-value" style="color: #f1f5f9; font-weight: 600; font-size: 1rem;">23%</div>
+                            </div>
+                            <div class="metric-bar" style="width: 100%; height: 6px; background: #374151; border-radius: 3px; overflow: hidden;">
+                                <div class="metric-progress good" style="width: 23%; height: 100%; background: linear-gradient(90deg, #10b981 0%, #059669 100%); transition: width 0.3s ease;"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <div class="metric-label" style="color: #94a3b8; font-size: 0.9rem;">API Calls</div>
+                                <div class="metric-value" style="color: #f1f5f9; font-weight: 600; font-size: 1rem;">1.2M</div>
+                            </div>
+                            <div class="metric-bar" style="width: 100%; height: 6px; background: #374151; border-radius: 3px; overflow: hidden;">
+                                <div class="metric-progress" style="width: 78%; height: 100%; background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%); transition: width 0.3s ease;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/rtl-toggle.js"></script>
+    <style>
+        /* RTL Support */
+        [dir="rtl"] .dashboard-sidebar {
+            right: 0;
+            left: auto;
+        }
+        [dir="rtl"] .dashboard-main {
+            margin-inline-start: 0;
+        }
+        [dir="rtl"] .dropdown-arrow {
+            margin-inline-start: 0;
+            margin-inline-end: auto;
+        }
+        
+        /* Hover Effects */
+        .nav-link:hover {
+            background: rgba(255,255,255,0.1) !important;
+            color: #fff !important;
+        }
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4) !important;
+        }
+        .dashboard-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4) !important;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dashboard-sidebar {
+                transform: translateX(-100%);
+                width: 260px;
+            }
+            [dir="rtl"] .dashboard-sidebar {
+                transform: translateX(100%);
+            }
+            .dashboard-main {
+                margin-inline-start: 0 !important;
+            }
+            [dir="rtl"] .dashboard-main {
+                margin-inline-end: 0 !important;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .dashboard-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .header-right {
+                gap: 8px !important;
+            }
+            .user-info {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .dashboard-content {
+                padding: 16px !important;
+            }
+            .dashboard-header {
+                padding: 12px 16px !important;
+            }
+            .stat-card {
+                padding: 16px !important;
+            }
+        }
+    </style>
+ <script>
+        // Simple direct RTL toggle function
+        function toggleRTLDirect() {
+            console.log('toggleRTLDirect called');
+            const html = document.documentElement;
+            const currentDir = html.getAttribute('dir') || 'ltr';
+            const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+            
+            html.setAttribute('dir', newDir);
+            console.log('Direction changed from', currentDir, 'to', newDir);
+            
+            // Update icon
+            const icon = document.querySelector('.rtl-toggle i');
+            if (icon) {
+                if (newDir === 'rtl') {
+                    icon.className = 'fas fa-globe-americas';
+                } else {
+                    icon.className = 'fas fa-globe';
+                }
+            }
+            
+            // Visual feedback
+        }
+        
+        // Test if RTL toggle is working
+        console.log('RTL toggle function available:', typeof toggleRTL);
+        console.log('HTML dir attribute:', document.documentElement.getAttribute('dir'));
+        
+        // Add click event listener as backup
+        document.addEventListener('DOMContentLoaded', function() {
+            const rtlButton = document.querySelector('.rtl-toggle');
+            if (rtlButton) {
+                console.log('RTL button found');
+                rtlButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('RTL button clicked');
+                    if (typeof toggleRTL === 'function') {
+                        toggleRTL();
+                    } else {
+                        // Fallback RTL toggle
+                        const html = document.documentElement;
+                        const currentDir = html.getAttribute('dir') || 'ltr';
+                        const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+                        html.setAttribute('dir', newDir);
+                        console.log('Fallback RTL toggle executed. New direction:', newDir);
+                    }
+                });
+            } else {
+                console.log('RTL button not found');
+            }
+        });
+    </script>
+</body>
+</html>

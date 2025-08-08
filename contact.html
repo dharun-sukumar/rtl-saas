@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CloudFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="brand-name">CloudFlow</span>
+            </div>
+                        <div class="nav-menu">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Home <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home v1</a>
+                        <a href="index-v2.html" class="dropdown-item">Home v2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Dashboard <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                        <a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
+                    </div>
+                </div>
+                <a href="login.html" class="nav-link login-btn">Login</a>
+                <button class="rtl-toggle" onclick="toggleRTLDirect()">
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team - we'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>Have questions about our platform? Need help getting started? Our team is here to help you succeed.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Email Us</h4>
+                                <p>support@cloudflow.com</p>
+                                <span>We'll respond within 24 hours</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Call Us</h4>
+                                <p>+1 (555) 123-4567</p>
+                                <span>Mon-Fri, 9AM-6PM PST</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Live Chat</h4>
+                                <p>Available 24/7</p>
+                                <span>Click the chat icon in the bottom right</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Visit Us</h4>
+                                <p>123 Business Ave<br>San Francisco, CA 94107</p>
+                                <span>By appointment only</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Send us a Message</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="sales">Sales Question</option>
+                                <option value="support">Technical Support</option>
+                                <option value="billing">Billing Question</option>
+                                <option value="partnership">Partnership</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Our Location</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Interactive Map</p>
+                    <span>123 Business Ave, San Francisco, CA 94107</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How quickly can I get started?</h4>
+                    <p>You can sign up and start using CloudFlow in under 5 minutes. Our onboarding process is designed to get you up and running quickly.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you offer custom integrations?</h4>
+                    <p>Yes, we offer custom integrations for Enterprise customers. Contact our sales team to discuss your specific requirements.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What kind of support do you provide?</h4>
+                    <p>We offer 24/7 chat support for all customers, email support with guaranteed response times, and phone support for Premium and Enterprise plans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="/placeholder.svg?height=40&width=40" alt="CloudFlow Logo" class="logo">
+                        <span class="brand-name">CloudFlow</span>
+                    </div>
+                    <p>Empowering businesses worldwide with innovative SAAS solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CloudFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/rtl-toggle.js"></script>
+     <script>
+        // Simple direct RTL toggle function
+        function toggleRTLDirect() {
+            console.log('toggleRTLDirect called');
+            const html = document.documentElement;
+            const currentDir = html.getAttribute('dir') || 'ltr';
+            const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+            
+            html.setAttribute('dir', newDir);
+            console.log('Direction changed from', currentDir, 'to', newDir);
+            
+            // Update icon
+            const icon = document.querySelector('.rtl-toggle i');
+            if (icon) {
+                if (newDir === 'rtl') {
+                    icon.className = 'fas fa-globe-americas';
+                } else {
+                    icon.className = 'fas fa-globe';
+                }
+            }
+            
+            // Visual feedback
+        }
+        
+        // Test if RTL toggle is working
+        console.log('RTL toggle function available:', typeof toggleRTL);
+        console.log('HTML dir attribute:', document.documentElement.getAttribute('dir'));
+        
+        // Add click event listener as backup
+        document.addEventListener('DOMContentLoaded', function() {
+            const rtlButton = document.querySelector('.rtl-toggle');
+            if (rtlButton) {
+                console.log('RTL button found');
+                rtlButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('RTL button clicked');
+                    if (typeof toggleRTL === 'function') {
+                        toggleRTL();
+                    } else {
+                        // Fallback RTL toggle
+                        const html = document.documentElement;
+                        const currentDir = html.getAttribute('dir') || 'ltr';
+                        const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+                        html.setAttribute('dir', newDir);
+                        console.log('Fallback RTL toggle executed. New direction:', newDir);
+                    }
+                });
+            } else {
+                console.log('RTL button not found');
+            }
+        });
+    </script>
+</body>
+</html>

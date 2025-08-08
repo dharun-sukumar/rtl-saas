@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - CloudFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar user-sidebar" style="width: 280px; min-height: 100vh; background: linear-gradient(180deg, #2563eb 0%, #1e40af 100%); color: #fff; position: fixed; top: 0; left: 0; z-index: 1000; box-shadow: 4px 0 12px rgba(0,0,0,0.1); transition: all 0.3s ease; direction: inherit;">
+        <div class="sidebar-header" style="padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <div class="sidebar-brand" style="display: flex; align-items: center; gap: 12px; direction: inherit;">
+                <span class="brand-name" style="font-size: 1.4rem; font-weight: 700; color: #fff;">CloudFlow</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav" style="padding: 20px 0;">
+            <ul style="list-style: none; margin: 0; padding: 0;">
+                <li class="nav-item dropdown" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link dropdown-toggle" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; border-radius: 0; background: rgba(255,255,255,0.1); margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-tachometer-alt" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Dashboard</span>
+                        <i class="fas fa-chevron-down dropdown-arrow" style="margin-inline-start: auto; transition: transform 0.3s ease;"></i>
+                    </a>
+                    <ul class="dropdown-submenu" style="list-style: none; margin: 8px 0 0 0; padding: 0; background: rgba(0,0,0,0.1); margin: 8px 12px 0 12px; border-radius: 8px; overflow: hidden;">
+                        <li><a href="user-dashboard.html" class="active" style="display: block; padding: 10px 20px; color: #fff; text-decoration: none; transition: all 0.3s ease; background: rgba(255,255,255,0.1); padding-inline-start: 52px;">User Dashboard</a></li>
+                        <li><a href="admin-dashboard.html" style="display: block; padding: 10px 20px; color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease; padding-inline-start: 52px;">Admin Dashboard</a></li>
+                    </ul>
+                </li>
+                <li class="nav-divider" style="height: 1px; background: rgba(255,255,255,0.1); margin: 16px 20px;"></li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-user" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-credit-card" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Subscription</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-file-invoice" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Billing History</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-headset" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Support</span>
+                        <span class="badge" style="background: #ef4444; color: #fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; font-weight: 600;">2</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-cog" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Settings</span>
+                    </a>
+                </li>
+                <li class="nav-divider" style="height: 1px; background: rgba(255,255,255,0.1); margin: 16px 20px;"></li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="#" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-question-circle" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Help Center</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="index.html" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-home" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Back to Site</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="margin-bottom: 8px;">
+                    <a href="index.html" class="nav-link" style="display: flex; align-items: center; padding: 12px 20px; color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; margin: 0 12px; border-radius: 8px;">
+                        <i class="fas fa-sign-out-alt" style="width: 20px; margin-inline-end: 12px; font-size: 1.1rem;"></i>
+                        <span style="flex: 1; text-align: start;">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main" style="margin-inline-start: 280px; min-height: 100vh; direction: inherit; background: #0f172a;">
+        <!-- Header -->
+        <header class="dashboard-header" style="background: #1e293b; border-bottom: 1px solid #334155; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; direction: inherit; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+            <div class="header-left" style="display: flex; align-items: center; gap: 16px;">
+                <button class="sidebar-toggle" style="background: none; border: none; font-size: 1.2rem; color: #94a3b8; cursor: pointer; padding: 8px; border-radius: 6px; transition: all 0.2s;">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="welcome-message" style="text-align: start;">
+                    <h1 style="font-size: 1.8rem; font-weight: 700; color: #f1f5f9; margin: 0 0 4px 0;">Welcome back, John!</h1>
+                    <p style="color: #94a3b8; font-size: 0.9rem; margin: 0;">Here's what's happening with your account</p>
+                </div>
+            </div>
+            <div class="header-right" style="display: flex; align-items: center; gap: 16px; direction: inherit;">
+                <button class="rtl-toggle" onclick="toggleRTLDirect()" style="background: none; border: 1px solid #475569; color: #94a3b8; cursor: pointer; padding: 8px 12px; border-radius: 8px; transition: all 0.2s;">
+                    <i class="fas fa-globe"></i>
+                </button>
+                <div class="notifications" style="position: relative;">
+                    <button class="notification-btn" style="background: none; border: none; color: #94a3b8; cursor: pointer; padding: 8px; border-radius: 6px; position: relative; transition: all 0.2s;">
+                        <i class="fas fa-bell" style="font-size: 1.1rem;"></i>
+                        <span class="notification-badge" style="position: absolute; top: 4px; right: 4px; background: #ef4444; color: #fff; font-size: 0.75rem; padding: 2px 6px; border-radius: 10px; font-weight: 600;">2</span>
+                    </button>
+                </div>
+                <div class="user-menu" style="display: flex; align-items: center; gap: 12px; padding: 8px 16px; border-radius: 12px; background: #334155; border: 1px solid #475569; cursor: pointer; transition: all 0.2s;">
+                    <div class="user-avatar" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden;">
+                        <img src="/placeholder.svg?height=40&width=40" alt="User" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="user-info" style="text-align: start; direction: inherit;">
+                        <span class="user-name" style="display: block; font-weight: 600; color: #f1f5f9; font-size: 0.9rem;">John Smith</span>
+                        <span class="user-role" style="display: block; color: #94a3b8; font-size: 0.8rem;">Professional Plan</span>
+                    </div>
+                    <i class="fas fa-chevron-down" style="color: #94a3b8; font-size: 0.8rem; margin-inline-start: 8px;"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content" style="padding: 32px; direction: inherit;">
+            <!-- Quick Actions -->
+            <div class="quick-actions" style="display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap;">
+                <button class="action-btn primary" style="background: #2563eb; color: #fff; border: none; padding: 12px 20px; border-radius: 10px; display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 8px rgba(37,99,235,0.3);">
+                    <i class="fas fa-plus"></i>
+                    <span>New Project</span>
+                </button>
+                <button class="action-btn" style="background: #334155; color: #cbd5e1; border: 1px solid #475569; padding: 12px 20px; border-radius: 10px; display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.2s;">
+                    <i class="fas fa-upload"></i>
+                    <span>Upload File</span>
+                </button>
+                <button class="action-btn" style="background: #334155; color: #cbd5e1; border: 1px solid #475569; padding: 12px 20px; border-radius: 10px; display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.2s;">
+                    <i class="fas fa-users"></i>
+                    <span>Invite Team</span>
+                </button>
+                <button class="action-btn" style="background: #334155; color: #cbd5e1; border: 1px solid #475569; padding: 12px 20px; border-radius: 10px; display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.2s;">
+                    <i class="fas fa-chart-line"></i>
+                    <span>View Analytics</span>
+                </button>
+            </div>
+
+            <!-- User Stats -->
+            <div class="user-stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 32px;">
+                <div class="user-stat-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155; transition: all 0.2s;">
+                    <div class="stat-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div class="stat-icon projects" style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #fff;">
+                            <i class="fas fa-folder" style="font-size: 1.2rem;"></i>
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 style="color: #94a3b8; font-size: 0.9rem; font-weight: 500; margin-bottom: 8px;">Active Projects</h3>
+                        <div class="stat-number" style="font-size: 2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 4px;">12</div>
+                        <p class="stat-description" style="color: #64748b; font-size: 0.8rem; margin: 0;">3 completed this month</p>
+                    </div>
+                </div>
+
+                <div class="user-stat-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155; transition: all 0.2s;">
+                    <div class="stat-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div class="stat-icon storage" style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); display: flex; align-items: center; justify-content: center; color: #fff;">
+                            <i class="fas fa-hdd" style="font-size: 1.2rem;"></i>
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 style="color: #94a3b8; font-size: 0.9rem; font-weight: 500; margin-bottom: 8px;">Storage Used</h3>
+                        <div class="stat-number" style="font-size: 2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 4px;">68GB</div>
+                        <p class="stat-description" style="color: #64748b; font-size: 0.8rem; margin: 0;">32GB remaining</p>
+                    </div>
+                </div>
+
+                <div class="user-stat-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155; transition: all 0.2s;">
+                    <div class="stat-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                        <div class="stat-icon team" style="width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); display: flex; align-items: center; justify-content: center; color: #fff;">
+                            <i class="fas fa-users" style="font-size: 1.2rem;"></i>
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 style="color: #94a3b8; font-size: 0.9rem; font-weight: 500; margin-bottom: 8px;">Team Members</h3>
+                        <div class="stat-number" style="font-size: 2rem; font-weight: 700; color: #f1f5f9; margin-bottom: 4px;">8</div>
+                        <p class="stat-description" style="color: #64748b; font-size: 0.8rem; margin: 0;">2 invited pending</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Grid -->
+            <div class="user-dashboard-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;">
+                <!-- Subscription Panel -->
+                <div class="dashboard-card subscription-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155;">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #334155;">
+                        <h3 style="font-size: 1.2rem; font-weight: 600; color: #f1f5f9; margin: 0;">My Subscription</h3>
+                        <div class="plan-badge professional" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #fff; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 600;">Professional</div>
+                    </div>
+                    <div class="subscription-content">
+                        <div class="subscription-details" style="margin-bottom: 20px;">
+                            <div class="subscription-info" style="margin-bottom: 16px;">
+                                <h4 style="color: #f1f5f9; font-size: 1.1rem; font-weight: 600; margin-bottom: 8px;">Professional Plan</h4>
+                                <p class="subscription-price" style="color: #10b981; font-size: 1.5rem; font-weight: 700; margin-bottom: 4px;">$29/month</p>
+                                <p class="subscription-status" style="color: #94a3b8; font-size: 0.9rem; margin: 0;">Active until Dec 15, 2024</p>
+                            </div>
+                            <div class="subscription-usage" style="background: #334155; border-radius: 12px; padding: 16px;">
+                                <div class="usage-item" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <span class="usage-label" style="color: #94a3b8; font-size: 0.9rem;">Users</span>
+                                    <span class="usage-value" style="color: #f1f5f9; font-weight: 600; font-size: 0.9rem;">8/25</span>
+                                </div>
+                                <div class="usage-item" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <span class="usage-label" style="color: #94a3b8; font-size: 0.9rem;">Storage</span>
+                                    <span class="usage-value" style="color: #f1f5f9; font-weight: 600; font-size: 0.9rem;">68/100 GB</span>
+                                </div>
+                                <div class="usage-item" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span class="usage-label" style="color: #94a3b8; font-size: 0.9rem;">Projects</span>
+                                    <span class="usage-value" style="color: #f1f5f9; font-weight: 600; font-size: 0.9rem;">12/Unlimited</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subscription-actions" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                            <button class="btn btn-primary" style="background: #2563eb; color: #fff; border: none; padding: 10px 16px; border-radius: 8px; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.2s;">Upgrade Plan</button>
+                            <button class="btn btn-outline" style="background: transparent; color: #94a3b8; border: 1px solid #475569; padding: 10px 16px; border-radius: 8px; font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.2s;">Manage Billing</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Projects -->
+                <div class="dashboard-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155;">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #334155;">
+                        <h3 style="font-size: 1.2rem; font-weight: 600; color: #f1f5f9; margin: 0;">Recent Projects</h3>
+                        <a href="#" class="view-all" style="color: #2563eb; text-decoration: none; font-size: 0.9rem; font-weight: 500;">View All</a>
+                    </div>
+                    <div class="project-list">
+                        <div class="project-item" style="display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #334155;">
+                            <div class="project-icon" style="width: 48px; height: 48px; background: #dbeafe; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-briefcase" style="color: #2563eb; font-size: 1.2rem;"></i>
+                            </div>
+                            <div class="project-details" style="flex: 1;">
+                                <div class="project-name" style="font-weight: 600; color: #f1f5f9; font-size: 1rem; margin-bottom: 4px;">Marketing Campaign</div>
+                                <div class="project-description" style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 8px;">Q4 campaign materials and analytics</div>
+                                <div class="project-meta" style="display: flex; gap: 16px; font-size: 0.8rem; color: #64748b;">
+                                    <span class="project-date">Updated 2 hours ago</span>
+                                    <span class="project-members">5 members</span>
+                                </div>
+                            </div>
+                            <div class="project-status">
+                                <span class="status-badge in-progress" style="background: #fef3c7; color: #d97706; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 500;">In Progress</span>
+                            </div>
+                        </div>
+
+                        <div class="project-item" style="display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid #334155;">
+                            <div class="project-icon" style="width: 48px; height: 48px; background: #e0e7ff; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-code" style="color: #6366f1; font-size: 1.2rem;"></i>
+                            </div>
+                            <div class="project-details" style="flex: 1;">
+                                <div class="project-name" style="font-weight: 600; color: #f1f5f9; font-size: 1rem; margin-bottom: 4px;">Website Redesign</div>
+                                <div class="project-description" style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 8px;">Complete website overhaul and optimization</div>
+                                <div class="project-meta" style="display: flex; gap: 16px; font-size: 0.8rem; color: #64748b;">
+                                    <span class="project-date">Updated yesterday</span>
+                                    <span class="project-members">3 members</span>
+                                </div>
+                            </div>
+                            <div class="project-status">
+                                <span class="status-badge completed" style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 500;">Completed</span>
+                            </div>
+                        </div>
+
+                        <div class="project-item" style="display: flex; gap: 16px; padding: 16px 0;">
+                            <div class="project-icon" style="width: 48px; height: 48px; background: #fef3c7; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-chart-pie" style="color: #d97706; font-size: 1.2rem;"></i>
+                            </div>
+                            <div class="project-details" style="flex: 1;">
+                                <div class="project-name" style="font-weight: 600; color: #f1f5f9; font-size: 1rem; margin-bottom: 4px;">Data Analysis</div>
+                                <div class="project-description" style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 8px;">Customer behavior analysis for Q4</div>
+                                <div class="project-meta" style="display: flex; gap: 16px; font-size: 0.8rem; color: #64748b;">
+                                    <span class="project-date">Updated 3 days ago</span>
+                                    <span class="project-members">2 members</span>
+                                </div>
+                            </div>
+                            <div class="project-status">
+                                <span class="status-badge pending" style="background: #fef2f2; color: #dc2626; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 500;">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Tickets and Billing History -->
+            <div class="user-dashboard-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;">
+                <!-- Support Tickets -->
+                <div class="dashboard-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155;">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #334155;">
+                        <h3 style="font-size: 1.2rem; font-weight: 600; color: #f1f5f9; margin: 0;">Support Tickets</h3>
+                        <button class="btn btn-sm btn-primary" style="background: #2563eb; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 500; cursor: pointer;">New Ticket</button>
+                    </div>
+                    <div class="ticket-list">
+                        <div class="ticket-item" style="display: flex; justify-content: space-between; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid #334155;">
+                            <div class="ticket-info" style="flex: 1;">
+                                <div class="ticket-id" style="color: #2563eb; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">#12345</div>
+                                <div class="ticket-subject" style="color: #f1f5f9; font-size: 0.9rem; font-weight: 500; margin-bottom: 4px;">Login issues with SSO</div>
+                                <div class="ticket-date" style="color: #64748b; font-size: 0.8rem;">Created 2 days ago</div>
+                            </div>
+                            <div class="ticket-status">
+                                <span class="status-badge open" style="background: #fef3c7; color: #d97706; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 500;">Open</span>
+                            </div>
+                        </div>
+
+                        <div class="ticket-item" style="display: flex; justify-content: space-between; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid #334155;">
+                            <div class="ticket-info" style="flex: 1;">
+                                <div class="ticket-id" style="color: #2563eb; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">#12344</div>
+                                <div class="ticket-subject" style="color: #f1f5f9; font-size: 0.9rem; font-weight: 500; margin-bottom: 4px;">Feature request: Export functionality</div>
+                                <div class="ticket-date" style="color: #64748b; font-size: 0.8rem;">Created 5 days ago</div>
+                            </div>
+                            <div class="ticket-status">
+                                <span class="status-badge in-progress" style="background: #dbeafe; color: #2563eb; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 500;">In Progress</span>
+                            </div>
+                        </div>
+
+                        <div class="ticket-item" style="display: flex; justify-content: space-between; align-items: flex-start; padding: 16px 0;">
+                            <div class="ticket-info" style="flex: 1;">
+                                <div class="ticket-id" style="color: #2563eb; font-size: 0.8rem; font-weight: 600; margin-bottom: 4px;">#12343</div>
+                                <div class="ticket-subject" style="color: #f1f5f9; font-size: 0.9rem; font-weight: 500; margin-bottom: 4px;">Billing inquiry</div>
+                                <div class="ticket-date" style="color: #64748b; font-size: 0.8rem;">Created 1 week ago</div>
+                            </div>
+                            <div class="ticket-status">
+                                <span class="status-badge resolved" style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 500;">Resolved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Billing History -->
+                <div class="dashboard-card" style="background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid #334155;">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #334155;">
+                        <h3 style="font-size: 1.2rem; font-weight: 600; color: #f1f5f9; margin: 0;">Billing History</h3>
+                        <a href="#" class="view-all" style="color: #2563eb; text-decoration: none; font-size: 0.9rem; font-weight: 500;">View All</a>
+                    </div>
+                    <div class="billing-list">
+                        <div class="billing-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid #334155;">
+                            <div class="billing-info" style="flex: 1;">
+                                <div class="billing-description" style="color: #f1f5f9; font-size: 0.9rem; font-weight: 500; margin-bottom: 4px;">Professional Plan - December 2024</div>
+                                <div class="billing-date" style="color: #64748b; font-size: 0.8rem;">Dec 1, 2024</div>
+                            </div>
+                            <div class="billing-amount" style="color: #f1f5f9; font-weight: 600; font-size: 1rem; margin-inline-end: 12px;">$29.00</div>
+                            <div class="billing-status">
+                                <span class="status-badge paid" style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 500;">Paid</span>
+                            </div>
+                        </div>
+
+                        <div class="billing-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid #334155;">
+                            <div class="billing-info" style="flex: 1;">
+                                <div class="billing-description" style="color: #f1f5f9; font-size: 0.9rem; font-weight: 500; margin-bottom: 4px;">Professional Plan - November 2024</div>
+                                <div class="billing-date" style="color: #64748b; font-size: 0.8rem;">Nov 1, 2024</div>
+                            </div>
+                            <div class="billing-amount" style="color: #f1f5f9; font-weight: 600; font-size: 1rem; margin-inline-end: 12px;">$29.00</div>
+                            <div class="billing-status">
+                                <span class="status-badge paid" style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 500;">Paid</span>
+                            </div>
+                        </div>
+
+                        <div class="billing-item" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                            <div class="billing-info" style="flex: 1;">
+                                <div class="billing-description" style="color: #f1f5f9; font-size: 0.9rem; font-weight: 500; margin-bottom: 4px;">Professional Plan - October 2024</div>
+                                <div class="billing-date" style="color: #64748b; font-size: 0.8rem;">Oct 1, 2024</div>
+                            </div>
+                            <div class="billing-amount" style="color: #f1f5f9; font-weight: 600; font-size: 1rem; margin-inline-end: 12px;">$29.00</div>
+                            <div class="billing-status">
+                                <span class="status-badge paid" style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 500;">Paid</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/rtl-toggle.js"></script>
+    <script>
+        // Simple direct RTL toggle function
+        function toggleRTLDirect() {
+            console.log('toggleRTLDirect called');
+            const html = document.documentElement;
+            const currentDir = html.getAttribute('dir') || 'ltr';
+            const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+            
+            html.setAttribute('dir', newDir);
+            console.log('Direction changed from', currentDir, 'to', newDir);
+            
+            // Update icon
+            const icon = document.querySelector('.rtl-toggle i');
+            if (icon) {
+                if (newDir === 'rtl') {
+                    icon.className = 'fas fa-globe-americas';
+                } else {
+                    icon.className = 'fas fa-globe';
+                }
+            }
+            
+            // Visual feedback
+        }
+        
+        // Test if RTL toggle is working
+        console.log('RTL toggle function available:', typeof toggleRTL);
+        console.log('HTML dir attribute:', document.documentElement.getAttribute('dir'));
+        
+        // Add click event listener as backup
+        document.addEventListener('DOMContentLoaded', function() {
+            const rtlButton = document.querySelector('.rtl-toggle');
+            if (rtlButton) {
+                console.log('RTL button found');
+                rtlButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('RTL button clicked');
+                    if (typeof toggleRTL === 'function') {
+                        toggleRTL();
+                    } else {
+                        // Fallback RTL toggle
+                        const html = document.documentElement;
+                        const currentDir = html.getAttribute('dir') || 'ltr';
+                        const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+                        html.setAttribute('dir', newDir);
+                        console.log('Fallback RTL toggle executed. New direction:', newDir);
+                    }
+                });
+            } else {
+                console.log('RTL button not found');
+            }
+        });
+    </script>
+    <style>
+        /* RTL Support */
+        [dir="rtl"] .dashboard-sidebar {
+            right: 0;
+            left: auto;
+        }
+        [dir="rtl"] .dashboard-main {
+            margin-inline-start: 0;
+            /* margin-inline-end: 280px; */
+        }
+        [dir="rtl"] .dropdown-arrow {
+            margin-inline-start: 0;
+            margin-inline-end: auto;
+        }
+        
+        /* Hover Effects */
+        .nav-link:hover {
+            background: rgba(255,255,255,0.1) !important;
+            color: #fff !important;
+        }
+        .action-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3) !important;
+        }
+        .action-btn.primary:hover {
+            background: #1d4ed8 !important;
+            box-shadow: 0 6px 20px rgba(37,99,235,0.4) !important;
+        }
+        .user-stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4) !important;
+        }
+        .dashboard-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4) !important;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dashboard-sidebar {
+                transform: translateX(-100%);
+                width: 260px;
+            }
+            [dir="rtl"] .dashboard-sidebar {
+                transform: translateX(100%);
+            }
+            .dashboard-main {
+                margin-inline-start: 0 !important;
+            }
+            [dir="rtl"] .dashboard-main {
+                margin-inline-end: 0 !important;
+            }
+            .quick-actions {
+                flex-direction: column;
+                gap: 12px !important;
+            }
+            .action-btn {
+                justify-content: center !important;
+            }
+            .user-stats-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .header-right {
+                gap: 8px !important;
+            }
+            .user-info {
+                display: none;
+            }
+            .welcome-message h1 {
+                font-size: 1.4rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .dashboard-content {
+                padding: 16px !important;
+            }
+            .dashboard-header {
+                padding: 12px 16px !important;
+            }
+            .action-btn {
+                padding: 10px 16px !important;
+                font-size: 0.85rem !important;
+            }
+        }
+    </style>
+</body>
+</html>

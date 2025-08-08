@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - CloudFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="error-page">
+    <div class="error-container">
+        <div class="error-content">
+            <div class="error-illustration">
+                <div class="error-number">404</div>
+                <div class="error-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            
+            <div class="error-text">
+                <h1>Oops! Page Not Found</h1>
+                <p>The page you're looking for seems to have wandered off into the digital wilderness. Don't worry, even the best explorers get lost sometimes!</p>
+            </div>
+            
+            <div class="error-actions">
+                <button class="btn btn-primary" onclick="goHome()">
+                    <i class="fas fa-home"></i>
+                    Back to Home
+                </button>
+                <button class="btn btn-outline" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i>
+                    Go Back
+                </button>
+            </div>
+            
+            <div class="error-suggestions">
+                <h3>What you can do:</h3>
+                <ul>
+                    <li>Check if the URL is spelled correctly</li>
+                    <li>Try searching for what you need</li>
+                    <li>Visit our <a href="index.html">homepage</a></li>
+                    <li>Contact our <a href="contact.html">support team</a></li>
+                </ul>
+            </div>
+
+            <div class="search-section">
+                <h4>Search our site:</h4>
+                <div class="search-form">
+                    <input type="text" placeholder="What are you looking for?" id="searchInput">
+                    <button type="button" class="btn btn-primary" onclick="performSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <button class="rtl-toggle error-rtl-toggle" onclick="toggleRTL()">
+            <i class="fas fa-language"></i>
+        </button>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/rtl-toggle.js"></script>
+    <script>
+        function goHome() {
+            window.location.href = 'index.html';
+        }
+
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            if (searchTerm) {
+                // In a real application, this would redirect to a search results page
+                alert(`Searching for: ${searchTerm}`);
+            }
+        }
+
+        // Allow Enter key to trigger search
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Animate the 404 number
+        const errorNumber = document.querySelector('.error-number');
+        setTimeout(() => {
+            errorNumber.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                errorNumber.style.transform = 'scale(1)';
+            }, 200);
+        }, 500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - CloudFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="coming-soon-page">
+    <div class="coming-soon-container">
+        <div class="coming-soon-content">
+            <div class="brand-header">
+                <img src="/placeholder.svg?height=60&width=60" alt="CloudFlow Logo" class="logo">
+                <span class="brand-name">CloudFlow</span>
+            </div>
+            
+            <div class="coming-soon-text">
+                <h1>Something Amazing is Coming Soon</h1>
+                <p>We're working hard to bring you the next generation of business automation tools. Get ready for a revolutionary SAAS experience that will transform how you work.</p>
+            </div>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+            
+            <!-- Newsletter Signup -->
+            <div class="notify-section">
+                <h3>Be the First to Know</h3>
+                <p>Subscribe to our newsletter and get notified when we launch</p>
+                <form class="notify-form" id="notifyForm">
+                    <div class="form-group">
+                        <input type="email" id="notifyEmail" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            Notify Me
+                            <i class="fas fa-bell"></i>
+                        </button>
+                    </div>
+                    <div class="form-note">
+                        <i class="fas fa-lock"></i>
+                        <span>We respect your privacy. No spam, ever.</span>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Features Preview -->
+            <div class="features-preview">
+                <h3>What to Expect</h3>
+                <div class="preview-features">
+                    <div class="preview-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Lightning Fast</h4>
+                        <p>Experience unprecedented speed and performance</p>
+                    </div>
+                    <div class="preview-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>AI-Powered</h4>
+                        <p>Smart automation that learns and adapts</p>
+                    </div>
+                    <div class="preview-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Ultra Secure</h4>
+                        <p>Enterprise-grade security from day one</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="social-section">
+                <p>Follow us for updates</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="background-animation">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+        </div>
+        
+        <button class="rtl-toggle coming-soon-rtl-toggle" onclick="toggleRTL()">
+            <i class="fas fa-language"></i>
+        </button>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/rtl-toggle.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            // Set launch date (30 days from now for demo purposes)
+            const launchDate = new Date();
+            launchDate.setDate(launchDate.getDate() + 30);
+            
+            const now = new Date().getTime();
+            const distance = launchDate.getTime() - now;
+            
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+        }
+        
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Newsletter form submission
+        document.getElementById('notifyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('notifyEmail').value;
+            
+            if (email) {
+                // Simulate form submission
+                const button = this.querySelector('button');
+                const originalText = button.innerHTML;
+                
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+                button.disabled = true;
+                
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+                    button.style.background = '#10b981';
+                    
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+                        button.style.background = '';
+                        document.getElementById('notifyEmail').value = '';
+                    }, 3000);
+                }, 2000);
+            }
+        });
+        
+        // Animate floating shapes
+        function animateShapes() {
+            const shapes = document.querySelectorAll('.floating-shape');
+            shapes.forEach((shape, index) => {
+                const randomX = Math.random() * 100;
+                const randomY = Math.random() * 100;
+                const randomRotate = Math.random() * 360;
+                const duration = 10 + (index * 2);
+                
+                shape.style.animation = `float ${duration}s ease-in-out infinite`;
+            });
+        }
+        
+        setTimeout(animateShapes, 1000);
+    </script>
+</body>
+</html>

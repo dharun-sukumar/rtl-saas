@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - CloudFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="brand-name">CloudFlow</span>
+            </div>
+                        <div class="nav-menu">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Home <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home v1</a>
+                        <a href="index-v2.html" class="dropdown-item">Home v2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Dashboard <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                        <a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
+                    </div>
+                </div>
+                <a href="login.html" class="nav-link login-btn">Login</a>
+                <button class="rtl-toggle" onclick="toggleRTLDirect()">
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Blog</h1>
+            <p>Stay updated with the latest news, insights, and tips from our team</p>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-post">
+        <div class="container">
+            <div class="featured-article">
+                <div class="featured-image">
+                    <img src="https://t3.ftcdn.net/jpg/00/76/31/18/360_F_76311829_sT3gJDd0aBdx497WkO72gs9vjCl22N8l.jpg" alt="Featured Article">
+                </div>
+                <div class="featured-content">
+                    <div class="post-meta">
+                        <span class="category">Product Updates</span>
+                        <span class="date">December 15, 2024</span>
+                    </div>
+                    <h2>The Future of Business Automation: 2025 Trends</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <div class="post-author">
+                        <img src="/placeholder.svg?height=50&width=50" alt="Sarah Chen">
+                        <div class="author-info">
+                            <span class="author-name">Sarah Chen</span>
+                            <span class="author-title">Head of Product</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">Read Full Article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-grid">
+        <div class="container">
+            <div class="blog-articles">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://waz.smartdraw.com/working-smarter/img/how-to-create-a-project-planning-map.svg?bn=15100111939" alt="Blog Post">
+                        <div class="blog-category">Analytics</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">December 10, 2024</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <h3>How to Leverage Data Analytics for Better Decision Making</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="blog-author">
+                            <img src="https://waz.smartdraw.com/working-smarter/img/how-to-create-a-project-planning-map.svg?bn=15100111939" alt="John Smith">
+                            <span>John Smith</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://waz.smartdraw.com/working-smarter/img/how-to-create-a-project-planning-map.svg?bn=15100111939" alt="Blog Post">
+                        <div class="blog-category">Productivity</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">December 8, 2024</span>
+                            <span class="read-time">3 min read</span>
+                        </div>
+                        <h3>Remote Team Management: Best Practices and Tools</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="blog-author">
+                            <img src="https://waz.smartdraw.com/working-smarter/img/how-to-create-a-project-planning-map.svg?bn=15100111939" alt="Emily Johnson">
+                            <span>Emily Johnson</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://waz.smartdraw.com/working-smarter/img/how-to-create-a-project-planning-map.svg?bn=15100111939" alt="Blog Post">
+                        <div class="blog-category">Security</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">December 5, 2024</span>
+                            <span class="read-time">7 min read</span>
+                        </div>
+                        <h3>Essential Security Measures for SAAS Applications</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="blog-author">
+                            <img src="https://waz.smartdraw.com/working-smarter/img/how-to-create-a-project-planning-map.svg?bn=15100111939" alt="Michael Brown">
+                            <span>Michael Brown</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://waz.smartdraw.com/working-smarter/img/how-to-create-a-project-planning-map.svg?bn=15100111939" alt="Blog Post">
+                        <div class="blog-category">Business</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">December 1, 2024</span>
+                            <span class="read-time">4 min read</span>
+                        </div>
+                        <h3>Scaling Your Business: When and How to Upgrade</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="blog-author">
+                            <img src="https://waz.smartdraw.com/working-smarter/img/how-to-create-a-project-planning-map.svg?bn=15100111939" alt="Lisa Wang">
+                            <span>Lisa Wang</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://waz.smartdraw.com/working-smarter/img/how-to-create-a-project-planning-map.svg?bn=15100111939" alt="Blog Post">
+                        <div class="blog-category">Development</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">November 28, 2024</span>
+                            <span class="read-time">6 min read</span>
+                        </div>
+                        <h3>API Integration Best Practices for Developers</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="blog-author">
+                            <img src="https://waz.smartdraw.com/working-smarter/img/how-to-create-a-project-planning-map.svg?bn=15100111939" alt="David Kim">
+                            <span>David Kim</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://waz.smartdraw.com/working-smarter/img/how-to-create-a-project-planning-map.svg?bn=15100111939" alt="Blog Post">
+                        <div class="blog-category">Support</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">November 25, 2024</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <h3>Building Better Customer Support: Tips and Strategies</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="blog-author">
+                            <img src="https://waz.smartdraw.com/working-smarter/img/how-to-create-a-project-planning-map.svg?bn=15100111939" alt="Rachel Green">
+                            <span>Rachel Green</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="btn btn-outline" disabled>Previous</button>
+                <span class="page-numbers">
+                    <button class="page-number active">1</button>
+                    <button class="page-number">2</button>
+                    <button class="page-number">3</button>
+                    <span class="dots">...</span>
+                    <button class="page-number">10</button>
+                </span>
+                <button class="btn btn-outline">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter and never miss our latest updates, tips, and insights.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="/placeholder.svg?height=40&width=40" alt="CloudFlow Logo" class="logo">
+                        <span class="brand-name">CloudFlow</span>
+                    </div>
+                    <p>Empowering businesses worldwide with innovative SAAS solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CloudFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/rtl-toggle.js"></script>
+    <script>
+        // Simple direct RTL toggle function
+        function toggleRTLDirect() {
+            console.log('toggleRTLDirect called');
+            const html = document.documentElement;
+            const currentDir = html.getAttribute('dir') || 'ltr';
+            const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+            
+            html.setAttribute('dir', newDir);
+            console.log('Direction changed from', currentDir, 'to', newDir);
+            
+            // Update icon
+            const icon = document.querySelector('.rtl-toggle i');
+            if (icon) {
+                if (newDir === 'rtl') {
+                    icon.className = 'fas fa-globe-americas';
+                } else {
+                    icon.className = 'fas fa-globe';
+                }
+            }
+            
+            // Visual feedback
+        }
+        
+        // Test if RTL toggle is working
+        console.log('RTL toggle function available:', typeof toggleRTL);
+        console.log('HTML dir attribute:', document.documentElement.getAttribute('dir'));
+        
+        // Add click event listener as backup
+        document.addEventListener('DOMContentLoaded', function() {
+            const rtlButton = document.querySelector('.rtl-toggle');
+            if (rtlButton) {
+                console.log('RTL button found');
+                rtlButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('RTL button clicked');
+                    if (typeof toggleRTL === 'function') {
+                        toggleRTL();
+                    } else {
+                        // Fallback RTL toggle
+                        const html = document.documentElement;
+                        const currentDir = html.getAttribute('dir') || 'ltr';
+                        const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+                        html.setAttribute('dir', newDir);
+                        console.log('Fallback RTL toggle executed. New direction:', newDir);
+                    }
+                });
+            } else {
+                console.log('RTL button not found');
+            }
+        });
+    </script>
+</body>
+</html>

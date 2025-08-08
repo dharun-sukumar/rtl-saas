@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - CloudFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="/placeholder.svg?height=40&width=40" alt="CloudFlow Logo" class="logo">
+                <span class="brand-name">CloudFlow</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="nav-link login-btn">Login</a>
+                <button class="rtl-toggle" onclick="toggleRTL()">
+                    <i class="fas fa-language"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Portfolio</h1>
+            <p>Discover the success stories and case studies of businesses transformed by CloudFlow</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="portfolio-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="enterprise">Enterprise</button>
+                <button class="filter-btn" data-filter="startup">Startups</button>
+                <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                <button class="filter-btn" data-filter="finance">Finance</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-grid">
+        <div class="container">
+            <div class="portfolio-items">
+                <div class="portfolio-item" data-category="enterprise">
+                    <div class="portfolio-image">
+                        <img src="/placeholder.svg?height=300&width=400" alt="TechCorp Dashboard">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>TechCorp Analytics Platform</h3>
+                                <p>Enterprise dashboard transformation</p>
+                                <button class="btn btn-primary">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">
+                            <span class="category">Enterprise</span>
+                            <span class="result">+150% Efficiency</span>
+                        </div>
+                        <h4>TechCorp Analytics Platform</h4>
+                        <p>Complete digital transformation for Fortune 500 company, resulting in 150% improvement in operational efficiency.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="startup">
+                    <div class="portfolio-image">
+                        <img src="/placeholder.svg?height=300&width=400" alt="InnovateLab App">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>InnovateLab Mobile Suite</h3>
+                                <p>Startup growth acceleration</p>
+                                <button class="btn btn-primary">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">
+                            <span class="category">Startup</span>
+                            <span class="result">10x Growth</span>
+                        </div>
+                        <h4>InnovateLab Mobile Suite</h4>
+                        <p>Helped a tech startup scale from 100 to 10,000 users in just 6 months with our integrated platform.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ecommerce">
+                    <div class="portfolio-image">
+                        <img src="/placeholder.svg?height=300&width=400" alt="ShopFlow Platform">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>ShopFlow E-commerce Suite</h3>
+                                <p>Multi-channel retail solution</p>
+                                <button class="btn btn-primary">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">
+                            <span class="category">E-commerce</span>
+                            <span class="result">+200% Sales</span>
+                        </div>
+                        <h4>ShopFlow E-commerce Suite</h4>
+                        <p>Integrated multi-channel retail platform that doubled online sales and streamlined inventory management.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="healthcare">
+                    <div class="portfolio-image">
+                        <img src="/placeholder.svg?height=300&width=400" alt="HealthCare Pro">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>HealthCare Pro Management</h3>
+                                <p>Patient care optimization</p>
+                                <button class="btn btn-primary">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">
+                            <span class="category">Healthcare</span>
+                            <span class="result">+50% Efficiency</span>
+                        </div>
+                        <h4>HealthCare Pro Management</h4>
+                        <p>Comprehensive patient management system that improved care delivery and reduced administrative overhead by 50%.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="finance">
+                    <div class="portfolio-image">
+                        <img src="/placeholder.svg?height=300&width=400" alt="FinanceFlow Analytics">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>FinanceFlow Analytics</h3>
+                                <p>Real-time financial insights</p>
+                                <button class="btn btn-primary">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">
+                            <span class="category">Finance</span>
+                            <span class="result">+300% ROI</span>
+                        </div>
+                        <h4>FinanceFlow Analytics</h4>
+                        <p>Advanced financial analytics platform that provided real-time insights and tripled return on investment.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="enterprise">
+                    <div class="portfolio-image">
+                        <img src="/placeholder.svg?height=300&width=400" alt="WorkFlow Pro">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>WorkFlow Pro Automation</h3>
+                                <p>Process automation suite</p>
+                                <button class="btn btn-primary">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">
+                            <span class="category">Enterprise</span>
+                            <span class="result">+80% Productivity</span>
+                        </div>
+                        <h4>WorkFlow Pro Automation</h4>
+                        <p>Custom workflow automation solution that eliminated manual processes and boosted team productivity by 80%.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="startup">
+                    <div class="portfolio-image">
+                        <img src="/placeholder.svg?height=300&width=400" alt="TeamSync Platform">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>TeamSync Collaboration</h3>
+                                <p>Remote team productivity</p>
+                                <button class="btn btn-primary">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">
+                            <span class="category">Startup</span>
+                            <span class="result">5x Team Growth</span>
+                        </div>
+                        <h4>TeamSync Collaboration</h4>
+                        <p>Enabled a remote-first startup to scale their team from 10 to 50 members while maintaining productivity.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ecommerce">
+                    <div class="portfolio-image">
+                        <img src="/placeholder.svg?height=300&width=400" alt="StockMaster System">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>StockMaster Inventory</h3>
+                                <p>Smart inventory management</p>
+                                <button class="btn btn-primary">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">
+                            <span class="category">E-commerce</span>
+                            <span class="result">-60% Waste</span>
+                        </div>
+                        <h4>StockMaster Inventory</h4>
+                        <p>AI-powered inventory management system that reduced waste by 60% and optimized supply chain efficiency.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="healthcare">
+                    <div class="portfolio-image">
+                        <img src="/placeholder.svg?height=300&width=400" alt="TeleMed Connect">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-content">
+                                <h3>TeleMed Connect Platform</h3>
+                                <p>Telemedicine solution</p>
+                                <button class="btn btn-primary">View Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">
+                            <span class="category">Healthcare</span>
+                            <span class="result">+400% Reach</span>
+                        </div>
+                        <h4>TeleMed Connect Platform</h4>
+                        <p>Comprehensive telemedicine platform that expanded healthcare reach to rural areas by 400%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stats -->
+    <section class="success-stats">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Impact in Numbers</h2>
+                <p>The measurable results we've achieved for our clients</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">150%</div>
+                    <div class="stat-label">Average ROI Increase</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Coverage</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Join Our Success Stories?</h2>
+                <p>Let us help you transform your business and achieve remarkable results</p>
+                <button class="btn btn-primary btn-large">Start Your Project</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="/placeholder.svg?height=40&width=40" alt="CloudFlow Logo" class="logo">
+                        <span class="brand-name">CloudFlow</span>
+                    </div>
+                    <p>Empowering businesses worldwide with innovative SAAS solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CloudFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/rtl-toggle.js"></script>
+    <script>
+        // Portfolio filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
