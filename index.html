@@ -57,7 +57,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">Empower Your Workflow with Our SAAS Solution</h1>
-                    <p class="hero-subtitle">Transform your business operations with our cutting-edge cloud platform. Streamline processes, boost productivity, and scale with confidence.</p>
+                    <p class="hero-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <div class="hero-cta">
                         <button class="btn btn-primary">Get Started Free</button>
                         <button class="btn btn-secondary">Schedule a Demo</button>
@@ -235,57 +235,51 @@
 
     <script src="js/main.js"></script>
     <script src="js/rtl-toggle.js"></script>
- <script>
-        // Simple direct RTL toggle function
-        function toggleRTLDirect() {
-            console.log('toggleRTLDirect called');
-            const html = document.documentElement;
-            const currentDir = html.getAttribute('dir') || 'ltr';
-            const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
-            
-            html.setAttribute('dir', newDir);
-            console.log('Direction changed from', currentDir, 'to', newDir);
-            
-            // Update icon
-            const icon = document.querySelector('.rtl-toggle i');
-            if (icon) {
-                if (newDir === 'rtl') {
-                    icon.className = 'fas fa-globe-americas';
-                } else {
-                    icon.className = 'fas fa-globe';
-                }
-            }
-            
-            // Visual feedback
-        }
-        
-        // Test if RTL toggle is working
-        console.log('RTL toggle function available:', typeof toggleRTL);
-        console.log('HTML dir attribute:', document.documentElement.getAttribute('dir'));
-        
-        // Add click event listener as backup
-        document.addEventListener('DOMContentLoaded', function() {
-            const rtlButton = document.querySelector('.rtl-toggle');
-            if (rtlButton) {
-                console.log('RTL button found');
-                rtlButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    console.log('RTL button clicked');
-                    if (typeof toggleRTL === 'function') {
-                        toggleRTL();
-                    } else {
-                        // Fallback RTL toggle
-                        const html = document.documentElement;
-                        const currentDir = html.getAttribute('dir') || 'ltr';
-                        const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
-                        html.setAttribute('dir', newDir);
-                        console.log('Fallback RTL toggle executed. New direction:', newDir);
-                    }
-                });
+<script>
+    // Apply saved RTL setting before page renders
+    (function() {
+        const savedDir = localStorage.getItem('siteDirection') || 'ltr';
+        document.documentElement.setAttribute('dir', savedDir);
+    })();
+
+    function applyIconState(dir) {
+        const icon = document.querySelector('.rtl-toggle i');
+        if (icon) {
+            if (dir === 'rtl') {
+                icon.className = 'fas fa-globe-americas';
             } else {
-                console.log('RTL button not found');
+                icon.className = 'fas fa-globe';
             }
-        });
-    </script>
+        }
+    }
+
+    function toggleRTLDirect() {
+        const html = document.documentElement;
+        const currentDir = html.getAttribute('dir') || 'ltr';
+        const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+
+        html.setAttribute('dir', newDir);
+        localStorage.setItem('siteDirection', newDir); // save state
+        applyIconState(newDir);
+
+        console.log(`Direction changed from ${currentDir} to ${newDir}`);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Apply saved icon state
+        const savedDir = document.documentElement.getAttribute('dir') || 'ltr';
+        applyIconState(savedDir);
+
+        // Attach toggle event
+        const rtlButton = document.querySelector('.rtl-toggle');
+        if (rtlButton) {
+            rtlButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                toggleRTLDirect();
+            });
+        }
+    });
+</script>
+
 </body>
 </html>

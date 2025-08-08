@@ -363,12 +363,41 @@
 
 
 /* Hero Section RTL */
-[dir="rtl"] .hero-content {
-  direction: rtl;
+[dir="rtl"] .hero-title,
+[dir="rtl"] .hero-subtitle {
+  text-align: right;
 }
 
-[dir="rtl"] .hero-cta {
+[dir="rtl"] .hero-stats {
   flex-direction: row-reverse;
+}
+
+/* Features Grid RTL */
+[dir="rtl"] .features-list {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .feature-item {
+  text-align: right;
+}
+
+/* Pricing Preview RTL */
+[dir="rtl"] .pricing-cards {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .features-list li {
+  text-align: right;
+}
+
+/* CTA Section RTL */
+[dir="rtl"] .cta-content {
+  text-align: right;
+}
+
+[dir="rtl"] .cta-content button {
+  margin-inline-start: auto;
+  margin-inline-end: 0;
 }
 
 /* Features RTL */
