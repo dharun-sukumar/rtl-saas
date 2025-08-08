@@ -346,29 +346,50 @@
 
     <script src="js/main.js"></script>
     <script src="js/rtl-toggle.js"></script>
-    <script>
-        // Portfolio filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
+<script>
+    // Apply saved RTL setting before page renders
+    (function() {
+        const savedDir = localStorage.getItem('siteDirection') || 'ltr';
+        document.documentElement.setAttribute('dir', savedDir);
+    })();
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
+    function applyIconState(dir) {
+        const icon = document.querySelector('.rtl-toggle i');
+        if (icon) {
+            if (dir === 'rtl') {
+                icon.className = 'fas fa-globe-americas';
+            } else {
+                icon.className = 'fas fa-globe';
+            }
+        }
+    }
 
-                const filterValue = button.getAttribute('data-filter');
+    function toggleRTLDirect() {
+        const html = document.documentElement;
+        const currentDir = html.getAttribute('dir') || 'ltr';
+        const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
 
-                portfolioItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
+        html.setAttribute('dir', newDir);
+        localStorage.setItem('siteDirection', newDir); // save state
+        applyIconState(newDir);
+
+        console.log(`Direction changed from ${currentDir} to ${newDir}`);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Apply saved icon state
+        const savedDir = document.documentElement.getAttribute('dir') || 'ltr';
+        applyIconState(savedDir);
+
+        // Attach toggle event
+        const rtlButton = document.querySelector('.rtl-toggle');
+        if (rtlButton) {
+            rtlButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                toggleRTLDirect();
             });
-        });
-    </script>
+        }
+    });
+</script>
 </body>
 </html>
