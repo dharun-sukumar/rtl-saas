@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <main class="dashboard-main" style="margin-inline-start: 280px; min-height: 100vh; background: #0f172a; direction: inherit;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Admin Dashboard - CloudFlow</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="dashboard-page">
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" onclick="toggleMobileSidebar()"></div>
+    
     <!-- Sidebar -->
     <aside class="dashboard-sidebar" style="width: 280px; min-height: 100vh; background: linear-gradient(180deg, #2563eb 0%, #1e40af 100%); color: #fff; position: fixed; top: 0; left: 0; z-index: 1000; box-shadow: 4px 0 12px rgba(0,0,0,0.1); transition: all 0.3s ease; direction: inherit;">
         <div class="sidebar-header" style="padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
@@ -87,12 +90,27 @@
         </nav>
     </aside>
 
+    <!-- Navbar -->
+    <header class="navbar" style="background: #1e293b; color: #f1f5f9; padding: 16px; display: flex; align-items: center; justify-content: space-between; position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+        <div class="navbar-left" style="display: flex; align-items: center; gap: 16px;">
+            <button class="sidebar-toggle" onclick="toggleMobileSidebar()" style="background: none; border: none; font-size: 1.2rem; color: #94a3b8; cursor: pointer; padding: 8px; border-radius: 6px; transition: all 0.2s;">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1 style="font-size: 1.5rem; font-weight: 700; margin: 0;">Admin Dashboard</h1>
+        </div>
+        <div class="navbar-right" style="display: flex; align-items: center; gap: 16px;">
+            <button class="rtl-toggle" onclick="toggleRTLDirect()" style="background: none; border: 1px solid #475569; color: #94a3b8; cursor: pointer; padding: 8px 12px; border-radius: 8px; transition: all 0.2s;">
+                <i class="fas fa-globe"></i>
+            </button>
+        </div>
+    </header>
+
     <!-- Main Content -->
-    <main class="dashboard-main" style="min-height: 100vh; direction: inherit;">
+    <main class="dashboard-main" style="margin-inline-start: 280px; min-height: 100vh; background: #0f172a; direction: inherit;">
         <!-- Header -->
         <header class="dashboard-header" style="border-bottom: 1px solid #e2e8f0; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; direction: inherit; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
             <div class="header-left" style="display: flex; align-items: center; gap: 16px;">
-                <button class="sidebar-toggle" style="background: none; border: none; font-size: 1.2rem; color: #64748b; cursor: pointer; padding: 8px; border-radius: 6px; transition: all 0.2s;">
+                <button class="sidebar-toggle" onclick="toggleMobileSidebar()" style="background: none; border: none; font-size: 1.2rem; color: #cbd5e1; cursor: pointer; padding: 8px; border-radius: 6px; transition: all 0.2s; display: none;">
                     <i class="fas fa-bars"></i>
                 </button>
                 <h1 style="font-size: 1.8rem; font-weight: 700; color: #ffffff; margin: 0;">Admin Dashboard</h1>
@@ -387,6 +405,26 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.4) !important;
         }
         
+        /* Mobile hover states - disable on touch devices */
+        @media (hover: none) {
+            .stat-card:hover,
+            .dashboard-card:hover {
+                transform: none;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+            }
+        }
+        
+        /* Improve scroll performance on mobile */
+        .dashboard-sidebar,
+        .sidebar-nav {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Loading states */
+        .chart-placeholder {
+            min-height: 200px;
+        }
+        
         /* Animations */
         @keyframes pulse {
             0% {
@@ -400,14 +438,117 @@
             }
         }
         
-        /* Responsive Design */
+        /* Mobile Sidebar Toggle */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+        
+        .sidebar-open .sidebar-overlay {
+            display: block;
+        }
+        
+        .sidebar-open .dashboard-sidebar {
+            transform: translateX(0) !important;
+        }
+
+        /* Hide sidebar toggle on desktop */
+        @media (min-width: 769px) {
+            .sidebar-toggle {
+                display: none !important;
+            }
+        }
+        
+        /* Show sidebar toggle on mobile */
+        @media (max-width: 768px) {
+            .sidebar-toggle {
+                display: block !important;
+            }
+        }
+        
+        /* Tablet Responsive Design */
+        @media (max-width: 1024px) {
+            .dashboard-sidebar {
+                width: 260px;
+            }
+            .dashboard-main {
+                margin-inline-start: 260px;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .user-name {
+                font-size: 0.8rem !important;
+            }
+            .user-role {
+                font-size: 0.75rem !important;
+            }
+            .dashboard-content {
+                padding: 24px;
+            }
+            .dashboard-header {
+                padding: 16px 24px;
+            }
+        }
+        
+        /* Touch-friendly improvements */
+        @media (max-width: 768px) {
+            .nav-link, .notification-btn, .rtl-toggle, .sidebar-toggle {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .user-menu {
+                min-height: 44px;
+            }
+            
+            /* Improve touch targets */
+            .stat-card, .dashboard-card {
+                touch-action: manipulation;
+            }
+            
+            /* Prevent zoom on input focus */
+            select, input {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* Landscape phone adjustments */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .dashboard-header {
+                padding: 8px 16px !important;
+            }
+            .dashboard-header h1 {
+                font-size: 1.1rem !important;
+            }
+            .dashboard-content {
+                padding: 16px !important;
+            }
+            .stat-card, .dashboard-card {
+                padding: 12px !important;
+            }
+        }
+        
+        /* Mobile Responsive Design */
         @media (max-width: 768px) {
             .dashboard-sidebar {
                 transform: translateX(-100%);
-                width: 260px;
+                width: 280px;
+                z-index: 1001;
+                transition: transform 0.3s ease;
             }
             [dir="rtl"] .dashboard-sidebar {
                 transform: translateX(100%);
+                left: auto;
+                right: 0;
             }
             .dashboard-main {
                 margin-inline-start: 0 !important;
@@ -417,9 +558,11 @@
             }
             .stats-grid {
                 grid-template-columns: 1fr !important;
+                gap: 16px !important;
             }
             .dashboard-grid {
                 grid-template-columns: 1fr !important;
+                gap: 16px !important;
             }
             .header-right {
                 gap: 8px !important;
@@ -427,21 +570,194 @@
             .user-info {
                 display: none;
             }
+            .user-menu {
+                padding: 8px !important;
+            }
+            .dashboard-header h1 {
+                font-size: 1.4rem !important;
+            }
+            .sidebar-toggle {
+                display: block !important;
+            }
+            .chart-container {
+                height: 250px !important;
+            }
+            .card-header h3 {
+                font-size: 1rem !important;
+            }
+            /* Improve dropdown menu touch interactions */
+            .dropdown-submenu {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease, opacity 0.3s ease;
+                opacity: 0;
+            }
+            .dropdown.active .dropdown-submenu {
+                max-height: 200px;
+                opacity: 1;
+            }
+            .dropdown.active .dropdown-arrow {
+                transform: rotate(180deg);
+            }
+            /* Better touch targets */
+            .nav-link {
+                min-height: 48px;
+                display: flex;
+                align-items: center;
+            }
+            .dropdown-submenu li a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+            /* Responsive stat cards */
+            .stat-card {
+                min-height: auto;
+            }
+            .stat-header {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .stat-trend {
+                flex-shrink: 0;
+            }
         }
         
+        /* Small Mobile Responsive Design */
         @media (max-width: 480px) {
             .dashboard-content {
                 padding: 16px !important;
             }
             .dashboard-header {
                 padding: 12px 16px !important;
+                flex-direction: row;
+                align-items: center;
+            }
+            .dashboard-header h1 {
+                font-size: 1.2rem !important;
+                margin: 0 !important;
+            }
+            .header-left {
+                gap: 12px !important;
+            }
+            .header-right {
+                gap: 6px !important;
             }
             .stat-card {
                 padding: 16px !important;
             }
-
-            .dashboard-main {
-                margin-inline-start: 0px !important;
+            .stat-number {
+                font-size: 1.6rem !important;
+            }
+            .stat-icon {
+                width: 40px !important;
+                height: 40px !important;
+            }
+            .stat-icon i {
+                font-size: 1rem !important;
+            }
+            .dashboard-card {
+                padding: 16px !important;
+            }
+            .chart-container {
+                height: 200px !important;
+            }
+            .user-avatar-small {
+                width: 32px !important;
+                height: 32px !important;
+            }
+            .user-name {
+                font-size: 0.85rem !important;
+            }
+            .user-email {
+                font-size: 0.75rem !important;
+            }
+            .activity-icon {
+                width: 32px !important;
+                height: 32px !important;
+            }
+            .activity-icon i {
+                font-size: 0.9rem !important;
+            }
+            .metric-item {
+                margin-bottom: 16px !important;
+            }
+            .metric-label, .metric-value {
+                font-size: 0.85rem !important;
+            }
+            .dashboard-sidebar {
+                width: 260px;
+            }
+            .sidebar-header {
+                padding: 20px 16px !important;
+            }
+            .nav-link {
+                padding: 12px 16px !important;
+                margin: 0 8px !important;
+                min-height: 44px !important;
+            }
+            .nav-link i {
+                width: 18px !important;
+                margin-inline-end: 10px !important;
+            }
+            .dropdown-submenu li a {
+                padding: 10px 16px !important;
+                padding-inline-start: 44px !important;
+                min-height: 44px !important;
+                display: flex !important;
+                align-items: center !important;
+            }
+            .brand-name {
+                font-size: 1.2rem !important;
+            }
+            .notification-btn {
+                padding: 8px !important;
+                min-height: 44px !important;
+                min-width: 44px !important;
+            }
+            .rtl-toggle {
+                padding: 8px 10px !important;
+                min-height: 44px !important;
+            }
+            /* Improve sidebar scrolling on mobile */
+            .sidebar-nav {
+                overflow-y: auto;
+                max-height: calc(100vh - 80px);
+            }
+        }
+        
+        /* Extra Small Mobile Responsive Design */
+        @media (max-width: 360px) {
+            .dashboard-header {
+                padding: 10px 12px !important;
+            }
+            .dashboard-header h1 {
+                font-size: 1.1rem !important;
+            }
+            .dashboard-content {
+                padding: 12px !important;
+            }
+            .stat-card {
+                padding: 12px !important;
+            }
+            .dashboard-card {
+                padding: 12px !important;
+            }
+            .stats-grid, .dashboard-grid {
+                gap: 12px !important;
+            }
+            .stat-number {
+                font-size: 1.4rem !important;
+            }
+            .chart-container {
+                height: 180px !important;
+            }
+            .user-avatar {
+                width: 32px !important;
+                height: 32px !important;
+            }
+            .dashboard-sidebar {
+                width: 240px;
             }
         }
     </style>
@@ -488,7 +804,123 @@
                 toggleRTLDirect();
             });
         }
+
+        // Initialize mobile responsive features
+        initializeMobileFeatures();
     });
+
+    // Mobile sidebar functionality
+    function toggleMobileSidebar() {
+        const body = document.body;
+        body.classList.toggle('sidebar-open');
+    }
+
+    // Initialize mobile features
+    function initializeMobileFeatures() {
+        // Initialize dropdown menus
+        initializeDropdowns();
+        
+        // Close sidebar when clicking on main content on mobile
+        const main = document.querySelector('.dashboard-main');
+        if (main) {
+            main.addEventListener('click', function() {
+                if (window.innerWidth <= 768 && document.body.classList.contains('sidebar-open')) {
+                    document.body.classList.remove('sidebar-open');
+                }
+            });
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                document.body.classList.remove('sidebar-open');
+            }
+        });
+
+        // Close sidebar on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.body.classList.contains('sidebar-open')) {
+                document.body.classList.remove('sidebar-open');
+            }
+        });
+
+        // Prevent zoom on double tap for iOS
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Add swipe gestures for mobile
+        addSwipeGestures();
+    }
+
+    // Initialize dropdown functionality
+    function initializeDropdowns() {
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const parent = this.parentElement;
+                const isOpen = parent.classList.contains('active');
+                
+                // Close all other dropdowns
+                document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+                
+                // Toggle current dropdown
+                if (!isOpen) {
+                    parent.classList.add('active');
+                }
+            });
+        });
+    }
+
+    // Add swipe gestures for sidebar
+    function addSwipeGestures() {
+        let startX = 0;
+        let startY = 0;
+        
+        document.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        });
+        
+        document.addEventListener('touchmove', function(e) {
+            if (!startX || !startY) return;
+            
+            const endX = e.touches[0].clientX;
+            const endY = e.touches[0].clientY;
+            
+            const diffX = startX - endX;
+            const diffY = startY - endY;
+            
+            // Only handle horizontal swipes
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+                
+                if (window.innerWidth <= 768) {
+                    // Swipe right to open sidebar (LTR) or left to open (RTL)
+                    if ((diffX < 0 && !isRTL) || (diffX > 0 && isRTL)) {
+                        if (startX < 50) { // Only if swipe starts from edge
+                            document.body.classList.add('sidebar-open');
+                        }
+                    }
+                    // Swipe left to close sidebar (LTR) or right to close (RTL)
+                    else if ((diffX > 0 && !isRTL) || (diffX < 0 && isRTL)) {
+                        document.body.classList.remove('sidebar-open');
+                    }
+                }
+            }
+            
+            startX = 0;
+            startY = 0;
+        });
+    }
 </script>
 </body>
 </html>
